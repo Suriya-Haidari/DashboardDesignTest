@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page {
+  height: 100vh;
+}
+
+.select-scroll {
+  animation: scrollUp 0.5s ease-in-out;
+}
+
+@keyframes scrollUp {
+  from {
+    transform: translateY(10%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}

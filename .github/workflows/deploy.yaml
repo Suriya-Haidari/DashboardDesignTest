@@ -1,0 +1,24 @@
+name: Admin Panel CI
+
+on:
+  push:
+    branches: [ master ]
+
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: [admin-panel]
+    steps:
+      - name: Remove local changes ⚙️
+        run: cd /root/admin-panel && git reset --hard HEAD
+
+      - name: Pull Repository ⚙️
+        run: cd /root/admin-panel && git pull origin master
+
+      - name: Install Dependencies ⚙️
+        run: cd /root/admin-panel && npm install
+
+      - name: Build the project ⚙️
+        run: cd /root/admin-panel && npm run build
